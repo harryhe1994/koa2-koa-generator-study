@@ -6,8 +6,15 @@ const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 
+
 const index = require('./routes/index')
 const users = require('./routes/users')
+const dbUtil = require('./util/dbUtil')
+
+
+//DB connection
+dbUtil.connectMongoDB();
+dbUtil.createModel();
 
 // error handler
 onerror(app)

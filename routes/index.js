@@ -1,4 +1,6 @@
 const router = require('koa-router')()
+const cardService = require('../service/cardService');
+
 
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {
@@ -11,9 +13,7 @@ router.get('/string', async (ctx, next) => {
 })
 
 router.get('/json', async (ctx, next) => {
-  ctx.body = {
-    title: 'koa2 json'
-  }
+    ctx.response.body  = await cardService.findAllCard(ctx);
 })
 
 module.exports = router
