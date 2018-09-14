@@ -13,7 +13,7 @@ router.get('/string', async (ctx, next) => {
 })
 
 router.get('/json', async (ctx, next) => {
-    ctx.response.body  = await cardService.findAllCard(ctx);
+    ctx.response.body  = await cardService.findAllCard();
 })
 
 module.exports = router

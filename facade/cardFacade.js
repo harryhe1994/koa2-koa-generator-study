@@ -1,4 +1,4 @@
-const card = require('../models/card')
+require('../models/card');  //this need to require before card model
 const mongoose = require('mongoose');
 const cardModel = mongoose.model('Card');
 
